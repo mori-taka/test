@@ -1,0 +1,43 @@
+# original is in freemind
+
+ref
+    <https://docs.python.org/3/distutils/sourcedist.html>
+    <https://medium.com/packagr/creating-and-sharing-private-python-packages-151a95e10735>
+    setuptools
+        <https://packaging.python.org/guides/distributing-packages-using-setuptools/>
+only first time in new PC
+    set environment
+        why?
+            to solve path problem
+                if not set this, error raise at least one in each execution
+            ref
+                <https://benjamincongdon.me/blog/2017/02/19/A-Better-Way-to-Wrangle-Python-Environments/>
+        export PYTHONPATH=.
+        to see environments
+            export
+        to remove this
+            export -n PYTHONPATH
+cd ~/svn/test/package1_frame
+    virtualenv env
+    source env/bin/activate
+        pip install [package]
+            e.g.
+                pip install pandas
+        to execute
+            python -m package1
+            python package1/__main__.py
+            python package1/module1.py
+            python package1/lib/lib1.py
+            python setup.py sdist
+        to requirements
+            pip freeze > requirements.txt
+            pip install -r requirements.txt
+        deactivate
+cd ~/svn/test/package2_frame
+    virtualenv env
+    source env/bin/activate
+        to execute
+            python -m package2
+            python package2/__main__.py
+            python package2/module2.py
+        deactivate
